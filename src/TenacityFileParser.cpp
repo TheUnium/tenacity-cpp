@@ -6,7 +6,7 @@
 
 bool TenacityFileParser::parse(const std::string& filepath, std::unordered_map<std::string, std::string>& data, std::vector<std::string>& authors) {
     std::ifstream file(filepath);
-    if (!file.is_open()) { std::cerr << "cant open file : " << filepath << std::endl; return false; }
+    if (!file.is_open()) { std::cerr << "couldnt open file : " << filepath << std::endl; return false; }
 
     std::string line;
     while (std::getline(file, line)) {
@@ -30,7 +30,7 @@ bool TenacityFileParser::parse(const std::string& filepath, std::unordered_map<s
                 if (value.size() > 2 && value.front() == '"' && value.back() == '"') { value = value.substr(1, value.size() - 2); }
                 data[key] = value;
             } else {
-                std::cerr << "cant parsing line : " << line << std::endl;
+                std::cerr << "couldnt parse line : " << line << std::endl;
             }
         }
     }
@@ -63,7 +63,7 @@ bool TenacityFileParser::parseFromString(const std::string& fileContents, std::u
                 if (value.size() > 2 && value.front() == '"' && value.back() == '"') { value = value.substr(1, value.size() - 2); }
                 data[key] = value;
             } else {
-                std::cerr << "cant parsing line : " << line << std::endl;
+                std::cerr << "couldnt parse line : " << line << std::endl;
             }
         }
     }

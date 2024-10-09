@@ -4,7 +4,7 @@
 #include <iostream>
 
 bool Tenacity::loadFile(const std::string& filepath) {
-    if (!TenacityFileParser::parse(filepath, data, authors)) { std::cerr << "cant load/parse file : " << filepath << std::endl; return false; }
+    if (!TenacityFileParser::parse(filepath, data, authors)) { std::cerr << "couldnt load/parse file : " << filepath << std::endl; return false; }
     validateFile();
     return true;
 }
